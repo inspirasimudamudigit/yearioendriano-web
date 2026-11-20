@@ -1,0 +1,78 @@
+/* v29 — responsif & kenyamanan HP. Dimuat paling akhir; hanya menimpa tampilan, tidak mengubah konten. */
+
+/* Foto hero tidak lagi melebar keluar kolom (scroll samping di layar 901–1100px). */
+.hero-grid>.portrait{min-width:0;width:100%}
+@media(min-width:768px) and (max-width:1199px){.hero-grid>.portrait{aspect-ratio:auto}}
+
+@media(max-width:767px){
+  /* Menu: area sentuh 44px, bisa digeser jika tidak muat. */
+  .navigation{gap:4px;overflow-x:auto;scrollbar-width:none;margin-inline:-8px;padding-inline:0}
+  .navigation::-webkit-scrollbar{display:none}
+  .navigation a{display:inline-flex;align-items:center;min-height:44px;padding:0 8px;font-size:15px}
+  .site-header .header-grid{gap:6px}
+  .scroll-header{padding-block:6px}
+  .scroll-header-inner{gap:0}
+
+  /* Link teks mudah disentuh. */
+  .text-link,.underlined,.preview-flow-link,.back-top{display:inline-flex;align-items:center;min-height:44px}
+  .demo-toggle,#services .preview-flow-link{min-height:44px}
+  #services .mini-use-cases a{font-size:12px;padding:10px 8px}
+
+  /* Teks terlalu kecil. */
+  .service-browser-bar{font-size:11px}
+  .service-preview figcaption,.service-phones span,.mini-workflow-path>span{font-size:12px}
+  .mini-workflow-label{font-size:11px}
+
+  /* Input 16px supaya iPhone tidak otomatis zoom saat mengetik. */
+  input,select,textarea,#brief-form select,#brief-form textarea{font-size:16px!important}
+
+  /* Layanan: preview lebih pendek. */
+  .service-preview{--service-preview-height:260px}
+
+  /* Hasil kerja: kartu digeser ke samping, bukan 6 kartu panjang ke bawah. */
+  #work .work-grid{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;
+    margin-inline:-16px;padding:0 16px 14px;scroll-padding-inline:16px;scrollbar-width:thin}
+  #work .work-card{flex:0 0 84%;scroll-snap-align:start;min-width:0}
+  #work .work-cover{aspect-ratio:4/5}
+  #work .work-description{font-size:15px;line-height:1.55}
+
+  /* Produk: gambar tidak memakan satu layar penuh. */
+  .featured-product .product-image{height:240px}
+  .product-copy{padding:22px}
+  .kas-feature-visual{max-height:420px;overflow:hidden}
+
+  /* Ruang untuk tombol WhatsApp melayang di akhir halaman. */
+  .site-footer,footer{padding-bottom:84px}
+  .whatsapp-float{right:12px;bottom:12px;padding:12px 15px}
+}
+
+/* Petunjuk geser untuk kartu hasil kerja. */
+.work-swipe-hint{display:none}
+@media(max-width:767px){.work-swipe-hint{display:block;font-size:13px;color:#596773;margin:-8px 0 14px}}
+
+/* Menu hamburger (HP). */
+.menu-toggle{display:none}
+.mobile-menu{display:none}
+@media(max-width:767px){
+  .site-header .header-grid,.scroll-header-inner{display:flex!important;flex-direction:row!important;align-items:center!important;justify-content:space-between;gap:12px}
+  .site-header .navigation,.scroll-header .navigation{display:none}
+  .scroll-header{padding-block:8px}
+  .menu-toggle{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 14px;border:1px solid var(--line,#DDE5E2);border-radius:999px;background:#fff;font-size:15px;font-weight:500;color:#14232B;flex-shrink:0}
+  .menu-toggle-icon{display:grid;gap:4px;width:16px}
+  .menu-toggle-icon i{display:block;height:1.5px;background:currentColor;border-radius:2px}
+  .mobile-menu[open]{display:flex;flex-direction:column;margin:0;inset:0 0 auto auto;width:100%;max-width:100%;height:100dvh;max-height:100dvh;padding:0;border:0;border-radius:0;background:var(--page,#F7FAF8);color:#14232B;overflow:auto}
+  .mobile-menu::backdrop{background:#14232B66}
+  .mm-head{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 16px;border-bottom:1px solid var(--line,#DDE5E2)}
+  .mm-head .close-dialog{position:static;width:44px;height:44px;font-size:30px;line-height:1;color:#14232B}
+  .mm-list{list-style:none;margin:0;padding:8px 16px;counter-reset:mm}
+  .mm-list li{border-bottom:1px solid var(--line,#DDE5E2)}
+  .mm-list a{display:grid;grid-template-columns:1fr auto;column-gap:12px;padding:14px 2px;min-height:56px}
+  .mm-title{font-size:20px;font-weight:500;letter-spacing:-.3px}
+  .mm-desc{grid-column:1;font-size:14px;line-height:1.45;color:#596773;margin-top:2px}
+  .mm-arrow{grid-column:2;grid-row:1/3;align-self:center;color:var(--action,#0C756E);font-size:18px}
+  .mm-list a:active{background:#EDF6F1}
+  .mm-cta{margin-top:auto;padding:20px 16px 28px;border-top:1px solid var(--line,#DDE5E2);background:#EDF6F1}
+  .mm-cta p{font-size:15px;line-height:1.5;color:#3F5C53;margin-bottom:14px}
+  .mm-cta .solid-link{width:100%;justify-content:center;min-height:48px}
+}
+@media(prefers-reduced-motion:no-preference) and (max-width:767px){.mobile-menu[open]{animation:mm-in .22s ease-out}@keyframes mm-in{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}}
