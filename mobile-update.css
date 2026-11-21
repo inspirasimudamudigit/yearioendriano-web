@@ -60,19 +60,28 @@
   .menu-toggle{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 14px;border:1px solid var(--line,#DDE5E2);border-radius:999px;background:#fff;font-size:15px;font-weight:500;color:#14232B;flex-shrink:0}
   .menu-toggle-icon{display:grid;gap:4px;width:16px}
   .menu-toggle-icon i{display:block;height:1.5px;background:currentColor;border-radius:2px}
-  .mobile-menu[open]{display:flex;flex-direction:column;margin:0;inset:0 0 auto auto;width:100%;max-width:100%;height:100dvh;max-height:100dvh;padding:0;border:0;border-radius:0;background:var(--page,#F7FAF8);color:#14232B;overflow:auto}
-  .mobile-menu::backdrop{background:#14232B66}
-  .mm-head{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 16px;border-bottom:1px solid var(--line,#DDE5E2)}
-  .mm-head .close-dialog{position:static;width:44px;height:44px;font-size:30px;line-height:1;color:#14232B}
-  .mm-list{list-style:none;margin:0;padding:8px 16px;counter-reset:mm}
-  .mm-list li{border-bottom:1px solid var(--line,#DDE5E2)}
-  .mm-list a{display:grid;grid-template-columns:1fr auto;column-gap:12px;padding:14px 2px;min-height:56px}
-  .mm-title{font-size:20px;font-weight:500;letter-spacing:-.3px}
-  .mm-desc{grid-column:1;font-size:14px;line-height:1.45;color:#596773;margin-top:2px}
-  .mm-arrow{grid-column:2;grid-row:1/3;align-self:center;color:var(--action,#0C756E);font-size:18px}
-  .mm-list a:active{background:#EDF6F1}
-  .mm-cta{margin-top:auto;padding:20px 16px 28px;border-top:1px solid var(--line,#DDE5E2);background:#EDF6F1}
-  .mm-cta p{font-size:15px;line-height:1.5;color:#3F5C53;margin-bottom:14px}
-  .mm-cta .solid-link{width:100%;justify-content:center;min-height:48px}
+  .mobile-menu[open]{display:block;position:fixed;inset:64px 12px auto auto;margin:0;width:200px;max-width:calc(100vw - 24px);max-height:calc(100dvh - 80px);padding:6px;border:1px solid var(--line,#DDE5E2);border-radius:12px;background:#fff;color:#14232B;box-shadow:0 12px 32px #14232B1F;overflow:auto}
+  .mobile-menu::backdrop{background:#14232B14}
+  .mm-close{position:absolute!important;top:4px;right:4px;width:36px;height:36px;font-size:22px!important;line-height:1;color:#596773!important}
+  .mm-list{list-style:none;margin:0;padding:0}
+  .mm-list a{display:flex;align-items:center;min-height:44px;padding:0 44px 0 12px;border-radius:8px;font-size:16px;font-weight:500}
+  .mm-list li+li a{padding-right:12px}
+  .mm-list a:hover,.mm-list a:active{background:#EDF6F1;color:var(--action,#0C756E)}
 }
-@media(prefers-reduced-motion:no-preference) and (max-width:767px){.mobile-menu[open]{animation:mm-in .22s ease-out}@keyframes mm-in{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}}
+@media(prefers-reduced-motion:no-preference) and (max-width:767px){.mobile-menu[open]{animation:mm-in .22s ease-out}@keyframes mm-in{from{opacity:0;transform:translateY(-6px) scale(.98)}to{opacity:1;transform:none}}}
+
+/* Jarak lebih rapat di HP. */
+@media(max-width:767px){
+  .section{padding-block:44px}
+  .hero{padding-top:8px}
+  .hero-copy{padding-block:8px 4px;gap:16px}
+  .hero-copy>p,.info-copy>p,.work-intro p,.concrete-services-heading>p{line-height:1.55}
+  .hero-actions{gap:12px 18px;flex-wrap:wrap}
+  .eyebrow{margin-bottom:10px!important}
+  .split-grid{gap:10px}
+  .section-heading,.work-intro{margin-bottom:20px}
+  .concrete-services-heading{gap:10px!important;margin-bottom:20px}
+  .concrete-services-heading h2,.section-title,#process-title{margin-bottom:0}
+  .process-contact{margin-top:8px}
+  .faq-layout{gap:18px}
+}
