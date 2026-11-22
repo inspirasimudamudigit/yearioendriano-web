@@ -112,3 +112,48 @@
   .hub-core b{font-size:14px}
   .hub-core small{font-size:12px}
 }
+
+/* Dashboard konsep pipeline data (kartu Integrasi & Otomasi). */
+#services .auto-dash /* Jendela aplikasi */
+.app{background:#fff;border:1px solid #E3E8E5;border-radius:12px;box-shadow:0 10px 24px #14232B14;overflow:hidden;font-size:12px}
+#services .auto-dash .app-bar{display:flex;align-items:center;gap:6px;padding:8px 10px;border-bottom:1px solid #EEF1EF;background:#FBFCFB}
+#services .auto-dash .app-bar i{width:7px;height:7px;border-radius:50%;background:#D8DEDB}
+#services .auto-dash .app-bar span{margin-left:6px;font-size:11px;color:#596773}
+#services .auto-dash .app-bar .live{margin-left:auto;display:inline-flex;align-items:center;gap:5px;font-size:10.5px;font-weight:500;color:#0C756E;background:#E8F5F1;padding:3px 8px;border-radius:99px}
+#services .auto-dash .app-bar .live::before{content:"";width:6px;height:6px;border-radius:50%;background:#18A58E}
+#services .auto-dash .app-body{padding:12px}
+#services .auto-dash .title{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px}
+#services .auto-dash .title b{font-size:14px;font-weight:600}
+#services .auto-dash .title small{font-size:10.5px;color:#7A8784}
+#services .auto-dash /* Ringkasan */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:12px}
+#services .auto-dash .stat{border:1px solid #EEF1EF;border-radius:8px;padding:7px 8px}
+#services .auto-dash .stat small{display:block;font-size:10px;color:#7A8784;line-height:1.3}
+#services .auto-dash .stat b{display:block;font-size:15px;font-weight:600;margin-top:2px}
+#services .auto-dash .stat b em{font-style:normal;font-size:10px;font-weight:500;color:#0C756E;margin-left:3px}
+#services .auto-dash /* Alur */
+.flow{display:flex;align-items:center;gap:4px;margin-bottom:12px;padding:8px;background:#F4F8F6;border-radius:8px}
+#services .auto-dash .node{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;text-align:center;font-size:10px;font-weight:500;line-height:1.25}
+#services .auto-dash .node .ic{width:26px;height:26px;border-radius:7px;background:#fff;border:1px solid #E3E8E5;display:flex;align-items:center;justify-content:center}
+#services .auto-dash .node .ic img{width:15px;height:15px}
+#services .auto-dash .node.core .ic{background:#0C756E;border-color:#0C756E;color:#fff}
+#services .auto-dash .arr{color:#0C756E;font-size:12px;margin-top:-14px}
+#services .auto-dash .multi{display:flex;gap:2px}
+#services .auto-dash .multi .ic{width:22px;height:22px;border-radius:6px}
+#services .auto-dash .multi .ic img{width:13px;height:13px}
+#services .auto-dash /* Log */
+.log-h{display:flex;justify-content:space-between;font-size:10.5px;color:#7A8784;margin-bottom:4px}
+#services .auto-dash .row{display:grid;grid-template-columns:auto 1fr auto;gap:8px;align-items:center;padding:7px 0;border-top:1px solid #F0F3F1}
+#services .auto-dash .row img{width:14px;height:14px}
+#services .auto-dash .row .t{font-size:11.5px;line-height:1.35}
+#services .auto-dash .row .t small{display:block;font-size:10px;color:#7A8784}
+#services .auto-dash .badge{font-size:10px;font-weight:500;padding:2px 7px;border-radius:99px;white-space:nowrap}
+#services .auto-dash .ok{background:#E8F5F1;color:#0C756E}
+#services .auto-dash .row>svg{width:14px;height:14px}
+#services .auto-dash .wait{background:#FFF4DE;color:#8A5A00}
+#services .auto-dash .note{margin:10px 2px 0;font-size:10.5px;color:#66716C;text-align:center;line-height:1.4}
+#services .auto-dash{width:100%;max-width:420px;text-align:left}
+#services .auto-dash .node.core .ic{background:#fff;border:2px solid #0C756E}
+#services .auto-dash .row>svg{width:14px;height:14px}
+#services .integration-preview .mini-use-cases{margin-top:0!important;padding-top:0!important;border-top:0!important}
+#services .integration-preview .mini-workflow{padding:10px!important}
